@@ -33,6 +33,16 @@ public class TrashManager : Singleton<TrashManager>
       Destroy(trash);
   }
 
+  public void MoveOnDraft(GameObject trash)
+  {
+    if (trashOnScreen.Contains(trash))
+    {
+      trashOnScreen.Remove(trash);
+      trashOnDraft.Add(trash);
+      trash.SetActive(false);
+    }
+  }
+
   public void SpawnTrash()
   {
     if (trashOnScreen.Count >= maxTrashOnScreen)
