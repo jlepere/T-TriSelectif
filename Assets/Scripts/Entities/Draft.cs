@@ -42,6 +42,7 @@ public class Draft : MonoBehaviour
     (collider.tag == "GreenTrash" && this.tag == "GreenDraft") ||
     (collider.tag == "YellowTrash" && this.tag == "YellowDraft"))
     {
+      SoundManager.Instance.PlayRight();
       if (trashOnDraft.Count >= draftManager.MaxTrashOnDraft || trash == null || !trash.DraftCollide)
         return;
       TrashManager.Instance.RemoveTrashOnScreen(collider.gameObject);
@@ -51,6 +52,7 @@ public class Draft : MonoBehaviour
     }
     else
     {
+      SoundManager.Instance.PlayWrong();
       if (trash != null)
         trash.DraftCollide = false;
       BoardManager.Instance.EcoReset();

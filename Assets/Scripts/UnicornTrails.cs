@@ -16,7 +16,10 @@ public class UnicornTrails : MonoBehaviour {
     transform.position = new Vector3(transform.position.x, initialY + y, 10);
 
     if (Input.GetKeyDown(KeyCode.Space))
+    {
+      SoundManage.Instance.PlayHorse();
       go = true;
+    }
     if (go)
       transform.Translate(.1f,0,0);
   }
