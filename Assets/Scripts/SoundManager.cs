@@ -15,7 +15,7 @@ public class SoundManager : MonoBehaviour {
 	}
 	
 	void PlayRight () {
-		source.PlayOneShot(right[Random.Range[0, 5]]);
+		source.PlayOneShot(right[Random.Range(0, 5)]);
 	}
 	
 	void PlayWrong () {
