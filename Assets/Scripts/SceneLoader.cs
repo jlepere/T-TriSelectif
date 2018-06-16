@@ -17,7 +17,7 @@ public class SceneLoader : MonoBehaviour {
 	void Update () {
 		if (transition)
 		{
-			if (transform.position.y >= -18.5)
+			if (transform.position.y >= -18.8)
 			{
 				transform.Translate(0, -5 * Time.deltaTime, 0);
 				source.volume -= Time.deltaTime / 3;
