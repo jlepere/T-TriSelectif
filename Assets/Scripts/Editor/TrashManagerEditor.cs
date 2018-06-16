@@ -9,9 +9,9 @@ public class TrashManagerEditor : Editor
     DrawDefaultInspector();
     GUILayout.FlexibleSpace();
     TrashManager trashManager = (TrashManager)target;
-    /*if (GUILayout.Button("SpawnTrash"))
+    if (GUILayout.Button("Clear Trash"))
     {
-      trashManager.SpawnTrash();
-    }*/
+      trashManager.ClearTrash();
+    }
   }
 }

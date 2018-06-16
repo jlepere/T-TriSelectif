@@ -9,9 +9,45 @@ public class TrashManager : Singleton<TrashManager>
   [SerializeField]
   private List<TrashSpawner> listSpawners = new List<TrashSpawner>();
 
+  [SerializeField]
+  private int maxTrashOnScreen = 5;
+
+  [SerializeField]
+  private List<GameObject> trashOnScreen = new List<GameObject>();
+
+  private void OnDestroy()
+  {
+    ClearTrash();
+  }
+
   public GameObject TrashPrefab
   {
     get { return trashPrefab; }
+  }
+
+  public void ClearTrash()
+  {
+    foreach (GameObject trash in trashOnScreen)
+      Destroy(trash);
+    trashOnScreen.Clear();
+  }
+
+  public void SpawnTrash(GameObject spawner)
+  {
+    if (trashOnScreen.Count >= maxTrashOnScreen)
+      return;
+    GameObject newTrash = Instantiate(trashPrefab, spawner.transform.position, Quaternion.Euler(Vector3.zero));
+    newTrash.transform.parent = spawner.transform;
+    trashOnScreen.Add(newTrash);
+  }
+
+  public void RemoveTrashOnScreen(GameObject trash)
+  {
+    if (trashOnScreen.Contains(trash))
+    {
+      trashOnScreen.Remove(trash);
+      trash.SetActive(false);
+    }
   }
   /*[SerializeField]
   private GameObject trashPrefab;
