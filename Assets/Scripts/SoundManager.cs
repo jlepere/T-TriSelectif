@@ -6,6 +6,7 @@ public class SoundManager : MonoBehaviour {
 
 	public AudioClip[] right;
 	public AudioClip wrong;
+	public AudioClip horse;
 
 	private AudioSource source;
 
@@ -19,5 +20,9 @@ public class SoundManager : MonoBehaviour {
 	
 	void PlayWrong () {
 		source.PlayOneShot(wrong);
+	}
+
+	void PlayHorse () {
+		source.PlayOneShot(horse);
 	}
 }
