@@ -93,7 +93,6 @@ public class Draft : MonoBehaviour
     {
       if (trash != null)
         trash.DraftCollide = false;
-      Debug.Log(trash.DraftCollide);
     }
   }
 }

@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 61659845580149414}
   - component: {fileID: 60281747434213696}
   - component: {fileID: 114499658450989038}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Draft
   m_TagString: BlueDraft
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 1890653423180612}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f85cd93e8f8f0416e9371e48ca6e9e72, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
