@@ -5,7 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/apoisson.unity
     guid: 43c4c5af8b880aa47aeef684bb79ad5c
+  - enabled: 1
+    path: Assets/Scenes/TitleScene.unity
+    guid: 241f20cd986814db4a26e2ac556d4cbb
   m_configObjects: {}
