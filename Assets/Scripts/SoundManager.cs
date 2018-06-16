@@ -11,13 +11,13 @@ public class SoundManager : MonoBehaviour {
 	private AudioSource source;
 
 	void Start () {
-		source = GetComponent<AudioSource>();	
+		source = GetComponent<AudioSource>();
 	}
-	
+
 	void PlayRight () {
-		source.PlayOneShot(right[Random.Range[0, 5]]);
+		source.PlayOneShot(right[Random.Range(0, 5)]);
 	}
-	
+
 	void PlayWrong () {
 		source.PlayOneShot(wrong);
 	}
