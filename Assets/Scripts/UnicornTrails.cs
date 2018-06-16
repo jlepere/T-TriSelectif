@@ -4,20 +4,26 @@ using UnityEngine;
 
 public class UnicornTrails : MonoBehaviour {
 
-  private float initialY;
-  private bool go = false;
+  private Vector3 initialPos;
+//  private float initialY;
+  private bool go = true;
 
   void Start () {
-    initialY = transform.position.y;
+    initialPos = transform.position;
+//    initialY = transform.position.y;
   }
 
   void Update () {
     float y = Mathf.Sin(Time.time * 5) * 0.5f;
-    transform.position = new Vector3(transform.position.x, initialY + y, 10);
+    transform.position = new Vector3(transform.position.x, initialPos.y + y, 10);
 
     if (Input.GetKeyDown(KeyCode.Space))
       go = true;
     if (go)
-      transform.Translate(.1f,0,0);
+      transform.Translate(4f * Time.deltaTime,0,0);
+    if (transform.position.x > 16) {
+      go = true;
+      transform.position = initialPos;
+    }
   }
 }
