@@ -4,7 +4,7 @@ using UnityEngine;
 public class TrashManager : Singleton<TrashManager>
 {
   [SerializeField]
-  private GameObject trashPrefab;
+  private List<GameObject> trashPrefabs = new List<GameObject>();
 
   [SerializeField]
   private List<TrashSpawner> listSpawners = new List<TrashSpawner>();
@@ -20,11 +20,6 @@ public class TrashManager : Singleton<TrashManager>
     ClearTrash();
   }
 
-  public GameObject TrashPrefab
-  {
-    get { return trashPrefab; }
-  }
-
   public void ClearTrash()
   {
     foreach (GameObject trash in trashOnScreen)
@@ -36,7 +31,11 @@ public class TrashManager : Singleton<TrashManager>
   {
     if (trashOnScreen.Count >= maxTrashOnScreen)
       return;
-    GameObject newTrash = Instantiate(trashPrefab, spawner.transform.position, Quaternion.Euler(Vector3.zero));
+    int selectedTrash = Random.Range(0, trashPrefabs.Count - 1);
+    Debug.Log(trashPrefabs);
+    Debug.Log(selectedTrash);
+    Debug.Log(trashPrefabs[selectedTrash]);
+    GameObject newTrash = Instantiate(trashPrefabs[selectedTrash], spawner.transform.position, Quaternion.Euler(Vector3.zero));
     newTrash.transform.parent = spawner.transform;
     trashOnScreen.Add(newTrash);
   }

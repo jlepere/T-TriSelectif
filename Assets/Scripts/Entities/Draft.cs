@@ -15,7 +15,9 @@ public class Draft : MonoBehaviour
 
   private void OnTriggerEnter2D(Collider2D collider)
   {
-    if (collider.tag == "Trash")
+    if ((collider.tag == "BlueTrash" && this.tag == "BlueDraft") ||
+    (collider.tag == "GreenTrash" && this.tag == "GreenDraft") ||
+    (collider.tag == "YellowTrash" && this.tag == "YellowDraft"))
     {
       if (trashOnDraft.Count >= draftManager.MaxTrashOnDraft)
         return;
