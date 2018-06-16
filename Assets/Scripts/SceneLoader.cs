@@ -38,7 +38,7 @@ public class SceneLoader : MonoBehaviour {
 
 		while (true)
 		{
-			AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Scenes/TrashScene");
+			AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(1);
       		break;
 		}
 	}
