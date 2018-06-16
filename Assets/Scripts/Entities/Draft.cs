@@ -33,7 +33,6 @@ public class Draft : MonoBehaviour
               initialPos = transform.position;
               drag = true;
               draftLocker = false;
-              Debug.Log("Test");
               break;
             }
           }
@@ -48,18 +47,27 @@ public class Draft : MonoBehaviour
 
         case TouchPhase.Ended:
           if (drag) {
+            Transform tmp1 = transform.parent;
+            GameObject swap = null;
             RaycastHit2D[] targetHits = Physics2D.RaycastAll(touchPos, (touch.position));
             foreach (var targetHit in targetHits) {
+              Debug.Log("test : " + targetHit.collider.tag);
               if (targetHit.collider && targetHit.collider.tag == "DraftLocker") {
                 draftLocker = true;
                 transform.parent.gameObject.GetComponent<DraftLocker>().SetDraft(null);
                 transform.parent = targetHit.collider.transform;
                 transform.parent.gameObject.GetComponent<DraftLocker>().SetDraft(this);
-                transform.localPosition = new Vector2(0, 0);
+                transform.localPosition = new Vector3(0, 0, 10);
+              } else if (targetHit.collider && targetHit.collider.gameObject.layer == 8 && !CompareTag(targetHit.collider.tag)) {
+                swap = targetHit.collider.gameObject;
               }
             }
             if (!draftLocker) {
               transform.position = initialPos;
+            } else if (swap != null) {
+              swap.transform.parent = tmp1;
+              tmp1.gameObject.GetComponent<DraftLocker>().SetDraft(swap.GetComponent<Draft>());
+              swap.transform.localPosition = new Vector3(0, 0, 10);
             }
           }
           drag = false;
