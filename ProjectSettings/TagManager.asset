@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Draft
+  - Trash
+  - BlueDraft
+  - GreenDraft
+  - YellowDraft
   layers:
   - Default
   - TransparentFX
@@ -40,4 +45,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Draft
+    uniqueID: 1349806741
     locked: 0

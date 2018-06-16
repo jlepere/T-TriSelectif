@@ -347,12 +347,16 @@ Prefab:
     - target: {fileID: 212441897291626230, guid: 53fcc280ea7124954a887c550ec43f20,
         type: 2}
       propertyPath: m_SortingLayerID
-      value: 1690503391
+      value: 1349806741
       objectReference: {fileID: 0}
     - target: {fileID: 212441897291626230, guid: 53fcc280ea7124954a887c550ec43f20,
         type: 2}
       propertyPath: m_SortingLayer
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1890653423180612, guid: 53fcc280ea7124954a887c550ec43f20, type: 2}
+      propertyPath: m_TagString
+      value: YellowDraft
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53fcc280ea7124954a887c550ec43f20, type: 2}
@@ -858,12 +862,16 @@ Prefab:
     - target: {fileID: 212441897291626230, guid: 53fcc280ea7124954a887c550ec43f20,
         type: 2}
       propertyPath: m_SortingLayerID
-      value: 1690503391
+      value: 1349806741
       objectReference: {fileID: 0}
     - target: {fileID: 212441897291626230, guid: 53fcc280ea7124954a887c550ec43f20,
         type: 2}
       propertyPath: m_SortingLayer
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1890653423180612, guid: 53fcc280ea7124954a887c550ec43f20, type: 2}
+      propertyPath: m_TagString
+      value: BlueDraft
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53fcc280ea7124954a887c550ec43f20, type: 2}
@@ -1018,12 +1026,16 @@ Prefab:
     - target: {fileID: 212441897291626230, guid: 53fcc280ea7124954a887c550ec43f20,
         type: 2}
       propertyPath: m_SortingLayerID
-      value: 1690503391
+      value: 1349806741
       objectReference: {fileID: 0}
     - target: {fileID: 212441897291626230, guid: 53fcc280ea7124954a887c550ec43f20,
         type: 2}
       propertyPath: m_SortingLayer
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1890653423180612, guid: 53fcc280ea7124954a887c550ec43f20, type: 2}
+      propertyPath: m_TagString
+      value: GreenDraft
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53fcc280ea7124954a887c550ec43f20, type: 2}
