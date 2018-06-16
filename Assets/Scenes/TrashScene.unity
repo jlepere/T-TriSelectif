@@ -151,7 +151,9 @@ MonoBehaviour:
   - {fileID: 1710116384}
   - {fileID: 624623877}
   maxTrashOnScreen: 5
-  trashOnScreen: []
+  trashOnScreen:
+  - {fileID: 1035354512}
+  - {fileID: 286089241}
 --- !u!4 &23864909
 Transform:
   m_ObjectHideFlags: 0
@@ -452,6 +454,11 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &286089241 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1550112236897514, guid: bed144dc08eb447689188d1086da301f,
+    type: 2}
+  m_PrefabInternal: {fileID: 693237146}
 --- !u!1 &524452504
 GameObject:
   m_ObjectHideFlags: 0
@@ -729,11 +736,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4656200456230290, guid: bed144dc08eb447689188d1086da301f, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -2.85
+      value: -0.35
       objectReference: {fileID: 0}
     - target: {fileID: 4656200456230290, guid: bed144dc08eb447689188d1086da301f, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.02
+      value: -2.26
       objectReference: {fileID: 0}
     - target: {fileID: 4656200456230290, guid: bed144dc08eb447689188d1086da301f, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1204,11 +1211,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1060905221007724, guid: ef4308755fd92419db8b993316b58e14, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ef4308755fd92419db8b993316b58e14, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1035354512 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1060905221007724, guid: ef4308755fd92419db8b993316b58e14,
+    type: 2}
+  m_PrefabInternal: {fileID: 1028796086}
 --- !u!114 &1087582430 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114499658450989038, guid: 53fcc280ea7124954a887c550ec43f20,
