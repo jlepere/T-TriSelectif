@@ -12,6 +12,8 @@ TagManager:
   - YellowTrash
   - TrickyTrash
   - Trash
+  - Draft
+  - DraftLocker
   layers:
   - Default
   - TransparentFX
