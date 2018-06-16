@@ -7,7 +7,7 @@ public class TrashManager : Singleton<TrashManager>
   private List<GameObject> trashPrefabs = new List<GameObject>();
 
   [SerializeField]
-  private List<TrashSpawner> listSpawners = new List<TrashSpawner>();
+  private List<GameObject> listSpawners = new List<GameObject>();
 
   [SerializeField]
   private int maxTrashOnScreen = 5;
