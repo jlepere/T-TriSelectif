@@ -35,8 +35,6 @@ public class Draft : MonoBehaviour
     trashOnDraft.Clear();
   }
 
-
-
   private void OnTriggerEnter2D(Collider2D collider)
   {
     Trash trash = collider.gameObject.GetComponent<Trash>();
