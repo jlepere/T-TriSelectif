@@ -78,15 +78,22 @@ public class Draft : MonoBehaviour
 
   private void OnTriggerEnter2D(Collider2D collider)
   {
+    Trash trash = collider.gameObject.GetComponent<Trash>();
     if ((collider.tag == "BlueTrash" && this.tag == "BlueDraft") ||
     (collider.tag == "GreenTrash" && this.tag == "GreenDraft") ||
     (collider.tag == "YellowTrash" && this.tag == "YellowDraft"))
     {
-      if (trashOnDraft.Count >= draftManager.MaxTrashOnDraft)
+      if (trashOnDraft.Count >= draftManager.MaxTrashOnDraft || trash == null || !trash.DraftCollide)
         return;
       TrashManager.Instance.RemoveTrashOnScreen(collider.gameObject);
       trashOnDraft.Add(collider.gameObject);
       collider.transform.parent = this.transform;
+    }
+    else
+    {
+      if (trash != null)
+        trash.DraftCollide = false;
+      Debug.Log(trash.DraftCollide);
     }
   }
 }

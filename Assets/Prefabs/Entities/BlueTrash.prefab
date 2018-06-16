@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4656200456230290}
   - component: {fileID: 212035902597583236}
   - component: {fileID: 50635267560133786}
-  - component: {fileID: 61038045537461896}
+  - component: {fileID: 58222200243244628}
   - component: {fileID: 114138846010759300}
   m_Layer: 0
   m_Name: BlueTrash
@@ -62,9 +62,9 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!61 &61038045537461896
-BoxCollider2D:
+  m_Constraints: 0
+--- !u!58 &58222200243244628
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -76,18 +76,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Radius: 0.5
 --- !u!114 &114138846010759300
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -99,6 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d053dbeb4002741a2962eb7fd43f8f9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  draftCollide: 1
 --- !u!212 &212035902597583236
 SpriteRenderer:
   m_ObjectHideFlags: 1
