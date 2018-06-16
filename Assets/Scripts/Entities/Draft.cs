@@ -19,7 +19,7 @@ public class Draft : MonoBehaviour
   }
 
   void Update () {
-    if (Input.touchCount > 0) {
+    if (Input.touchCount == 1) {
       Touch touch = Input.GetTouch(0);
 
       Vector2 touchPos = Camera.main.ScreenToWorldPoint(touch.position);
@@ -74,6 +74,38 @@ public class Draft : MonoBehaviour
           break;
       }
     }
+//    else if (Input.touchCount == 2) {
+//      Touch touch1 = Input.GetTouch(0);
+//      Touch touch2 = Input.GetTouch(1);
+//
+//      GameObject g1 = null;
+//      GameObject g2 = null;
+//
+//      Vector2 touch1Pos = Camera.main.ScreenToWorldPoint(touch1.position);
+//      RaycastHit2D[] hits1 = Physics2D.RaycastAll(touch1Pos, (touch1.position));
+//
+//      foreach (var hit1 in hits1) {
+//        if (hit1.collider && hit1.collider.gameObject.layer == 8) {
+//          g1 = hit1.collider.gameObject;
+//          break;
+//        }
+//      }
+//
+//      Vector2 touch2Pos = Camera.main.ScreenToWorldPoint(touch2.position);
+//      RaycastHit2D[] hits2 = Physics2D.RaycastAll(touch2Pos, (touch2.position));
+//
+//      foreach (var hit2 in hits2) {
+//        if (hit2.collider && hit2.collider.gameObject.layer == 8) {
+//          g2 = hit2.collider.gameObject;
+//          break;
+//        }
+//      }
+//
+//      if (g1 != null && g2 != null) {
+//        Transform tmp = g1.transform.parent;
+//        g1.transform.parent = g2.transform.parent;
+//      }
+//    }
   }
 
   private void OnTriggerEnter2D(Collider2D collider)
