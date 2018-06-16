@@ -7,6 +7,16 @@ public class TrashManager : Singleton<TrashManager>
   private GameObject trashPrefab;
 
   [SerializeField]
+  private List<TrashSpawner> listSpawners = new List<TrashSpawner>();
+
+  public GameObject TrashPrefab
+  {
+    get { return trashPrefab; }
+  }
+  /*[SerializeField]
+  private GameObject trashPrefab;
+
+  [SerializeField]
   private int maxTrashOnScreen;
 
   [SerializeField]
@@ -50,5 +60,5 @@ public class TrashManager : Singleton<TrashManager>
     GameObject newTrash = Instantiate(trashPrefab, new Vector3(0f, 8f, 0f), Quaternion.Euler(Vector3.zero));
     newTrash.transform.parent = this.transform;
     trashOnScreen.Add(newTrash);
-  }
+  }*/
 }
