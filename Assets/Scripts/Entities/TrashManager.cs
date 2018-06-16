@@ -32,9 +32,6 @@ public class TrashManager : Singleton<TrashManager>
     if (trashOnScreen.Count >= maxTrashOnScreen)
       return;
     int selectedTrash = Random.Range(0, trashPrefabs.Count - 1);
-    Debug.Log(trashPrefabs);
-    Debug.Log(selectedTrash);
-    Debug.Log(trashPrefabs[selectedTrash]);
     GameObject newTrash = Instantiate(trashPrefabs[selectedTrash], spawner.transform.position, Quaternion.Euler(Vector3.zero));
     newTrash.transform.parent = spawner.transform;
     trashOnScreen.Add(newTrash);

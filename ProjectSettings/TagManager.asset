@@ -4,11 +4,14 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Draft
-  - Trash
   - BlueDraft
   - GreenDraft
   - YellowDraft
+  - BlueTrash
+  - GreenTrash
+  - YellowTrash
+  - TrickyTrash
+  - Trash
   layers:
   - Default
   - TransparentFX

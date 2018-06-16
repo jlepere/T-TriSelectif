@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4408250196981202}
   - component: {fileID: 114587531100341156}
   m_Layer: 0
-  m_Name: DraftLocker_1
+  m_Name: DraftLocker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
