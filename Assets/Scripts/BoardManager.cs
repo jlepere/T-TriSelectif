@@ -47,8 +47,23 @@ public class BoardManager : Singleton<BoardManager>
       EcoBoost();
     gameScore += ecoBonus * scoreBonus;
 
+    if (gameScore >= 40 && gameScore < 50)
+      FadeBackground(ecoPrefabs[3], ecoPrefabs[2]);
+    else if (gameScore >= 50 && gameScore < 60)
+      FadeBackground(ecoPrefabs[2], ecoPrefabs[3]);
+
     Debug.Log("ScoreBonus " +  scoreBonus);
     Debug.Log("GameScore " + gameScore);
+  }
+
+  private void FadeBackground(GameObject toHide, GameObject toShow)
+  {
+
+  }
+
+  private void TranslateBackground(GameObject back)
+  {
+
   }
 
   public void EcoBoost()

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoundManager : MonoBehaviour {
+public class SoundManager : Singleton<SoundManager> {
 
 	public AudioClip[] right;
 	public AudioClip wrong;
@@ -14,15 +14,15 @@ public class SoundManager : MonoBehaviour {
 		source = GetComponent<AudioSource>();
 	}
 
-	void PlayRight () {
+	public void PlayRight () {
 		source.PlayOneShot(right[Random.Range(0, 5)]);
 	}
 
-	void PlayWrong () {
+	public void PlayWrong () {
 		source.PlayOneShot(wrong);
 	}
 
-	void PlayHorse () {
+	public void PlayHorse () {
 		source.PlayOneShot(horse);
 	}
 }

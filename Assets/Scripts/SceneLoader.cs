@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour {
 
 	public AudioClip click;
-	public float speed;
 
 	private AudioSource source;
 	private bool transition = false;
@@ -20,7 +19,7 @@ public class SceneLoader : MonoBehaviour {
 		{
 			if (transform.position.y >= -18.5)
 			{
-				transform.Translate(0, -speed * Time.deltaTime, 0);
+				transform.Translate(0, -5 * Time.deltaTime, 0);
 				source.volume -= Time.deltaTime / 3;
 			}
 		}
@@ -39,8 +38,8 @@ public class SceneLoader : MonoBehaviour {
 
 		while (true)
 		{
-			AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Scenes/apoisson");
-			yield return null;
-		}		
+			AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Scenes/TrashScene");
+      		break;
+		}
 	}
 }
