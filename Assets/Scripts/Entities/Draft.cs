@@ -18,6 +18,23 @@ public class Draft : MonoBehaviour
     draftManager = DraftManager.Instance;
   }
 
+  private void OnDestroy()
+  {
+    ClearTrash(true);
+  }
+
+  public int TrashInDraft
+  {
+    get { return trashOnDraft.Count; }
+  }
+
+  public void ClearTrash(bool end)
+  {
+    foreach (GameObject trash in trashOnDraft)
+      Destroy(trash);
+    trashOnDraft.Clear();
+  }
+
   void Update () {
     if (Input.touchCount == 1) {
       Touch touch = Input.GetTouch(0);
@@ -120,11 +137,13 @@ public class Draft : MonoBehaviour
       TrashManager.Instance.RemoveTrashOnScreen(collider.gameObject);
       trashOnDraft.Add(collider.gameObject);
       collider.transform.parent = this.transform;
+      BoardManager.Instance.EcoScore();
     }
     else
     {
       if (trash != null)
         trash.DraftCollide = false;
+      BoardManager.Instance.EcoReset();
     }
   }
 }

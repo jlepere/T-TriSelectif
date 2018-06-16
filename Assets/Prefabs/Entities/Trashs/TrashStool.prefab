@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 58116030749338334}
   - component: {fileID: 114351772570228688}
   m_Layer: 9
-  m_Name: TrickyTrash
+  m_Name: TrashStool
   m_TagString: TrickyTrash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

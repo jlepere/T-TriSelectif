@@ -15,9 +15,27 @@ public class TrashManager : Singleton<TrashManager>
   [SerializeField]
   private List<GameObject> trashOnScreen = new List<GameObject>();
 
+  private bool isActive = true;
+
+  private void Start()
+  {
+    ActivateSpawner();
+  }
+
   private void OnDestroy()
   {
     ClearTrash();
+    isActive = false;
+  }
+
+  private void OnTriggerEnter2D(Collider2D collider)
+  {
+    if (collider.tag == "BlueTrash" || collider.tag == "GreenTrash" ||
+    collider.tag == "YellowTrash" || collider.tag == "BrownTrash" ||
+    collider.tag == "TrickyTrash")
+    {
+      ActivateSpawner();
+    }
   }
 
   public void ClearTrash()
@@ -25,6 +43,12 @@ public class TrashManager : Singleton<TrashManager>
     foreach (GameObject trash in trashOnScreen)
       Destroy(trash);
     trashOnScreen.Clear();
+  }
+
+  private void ActivateSpawner()
+  {
+    int selectedSpawner = Random.Range(0, listSpawners.Count - 1);
+    SpawnTrash(listSpawners[selectedSpawner]);
   }
 
   public void SpawnTrash(GameObject spawner)
@@ -45,52 +69,4 @@ public class TrashManager : Singleton<TrashManager>
       trash.SetActive(false);
     }
   }
-  /*[SerializeField]
-  private GameObject trashPrefab;
-
-  [SerializeField]
-  private int maxTrashOnScreen;
-
-  [SerializeField]
-  private int maxTrashOnDraft;
-
-  [SerializeField]
-  private List<GameObject> trashOnScreen;
-
-  [SerializeField]
-  private List<GameObject> trashOnDraft;
-
-  protected override void Awake()
-  {
-    trashOnScreen = new List<GameObject>();
-    trashOnDraft = new List<GameObject>();
-  }
-
-  private void OnDestroy()
-  {
-    foreach (GameObject trash in trashOnScreen)
-      Destroy(trash);
-
-    foreach (GameObject trash in trashOnDraft)
-      Destroy(trash);
-  }
-
-  public void MoveOnDraft(GameObject trash)
-  {
-    if (trashOnScreen.Contains(trash))
-    {
-      trashOnScreen.Remove(trash);
-      trashOnDraft.Add(trash);
-      trash.SetActive(false);
-    }
-  }
-
-  public void SpawnTrash()
-  {
-    if (trashOnScreen.Count >= maxTrashOnScreen)
-      return;
-    GameObject newTrash = Instantiate(trashPrefab, new Vector3(0f, 8f, 0f), Quaternion.Euler(Vector3.zero));
-    newTrash.transform.parent = this.transform;
-    trashOnScreen.Add(newTrash);
-  }*/
 }
