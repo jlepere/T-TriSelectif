@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212441897291626230}
   - component: {fileID: 61659845580149414}
   - component: {fileID: 114499658450989038}
+  - component: {fileID: 114865522435095730}
   m_Layer: 0
   m_Name: Draft
   m_TagString: Draft
@@ -76,8 +77,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8bdf8e0b1024c41ea8c5f3235d7c4660, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114865522435095730
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1890653423180612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba14035010730e4439dde0bfd0091943, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212441897291626230
 SpriteRenderer:
   m_ObjectHideFlags: 1
