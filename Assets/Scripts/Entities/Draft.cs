@@ -18,21 +18,92 @@ public class Draft : MonoBehaviour
     draftManager = DraftManager.Instance;
   }
 
+  /*
   void Update () {
-    if (Input.touchCount == 1) {
+    if (Input.touchCount > 0) {
       Touch touch = Input.GetTouch(0);
 
       Vector2 touchPos = Camera.main.ScreenToWorldPoint(touch.position);
 
       switch (touch.phase) {
+//        case TouchPhase.Stationary:
+//          RaycastHit2D[] hitsTest = Physics2D.RaycastAll(touchPos, (touch.position));
+//          foreach (var hit in hitsTest) {
+//            if (hit.collider && CompareTag(hit.collider.tag)) {
+//              if (Input.touchCount == 2) {
+//                Debug.Log("Double Touch");
+//                Touch touch2 = Input.GetTouch(1);
+//
+//                GameObject g1 = hit.collider.gameObject;
+//                GameObject g2 = null;
+//
+//                Vector2 touch2Pos = Camera.main.ScreenToWorldPoint(touch2.position);
+//                RaycastHit2D[] hits2 = Physics2D.RaycastAll(touch2Pos, (touch2.position));
+//
+//                foreach (var hit2 in hits2) {
+//                  if (hit2.collider && hit2.collider.gameObject.layer == 8) {
+//                    g2 = hit2.collider.gameObject;
+//                    Debug.Log("Ok");
+//                    break;
+//                  }
+//                }
+//
+//                if (g1 != null && g2 != null) {
+//                  Debug.Log("Swap");
+//                  Transform tmp = g1.transform.parent;
+//                  g1.transform.parent = g2.transform.parent;
+//                  g1.transform.parent.GetComponent<DraftLocker>().SetDraft(g1.GetComponent<Draft>());
+//                  g1.transform.localPosition = new Vector3(0, 0, 10);
+//                  g2.transform.parent = tmp;
+//                  g2.transform.parent.GetComponent<DraftLocker>().SetDraft(g2.GetComponent<Draft>());
+//                  g2.transform.localPosition = new Vector3(0, 0, 10);
+//                }
+//              }
+//              break;
+//            }
+//          }
+//
+//          break;
+
         case TouchPhase.Began:
           drag = false;
           RaycastHit2D[] hits = Physics2D.RaycastAll(touchPos, (touch.position));
           foreach (var hit in hits) {
             if (hit.collider && CompareTag(hit.collider.tag)) {
-              initialPos = transform.position;
-              drag = true;
-              draftLocker = false;
+              if (Input.touchCount == 1) {
+                initialPos = transform.position;
+                drag = true;
+                draftLocker = false;
+              }
+//              else {
+//                Debug.Log("Double Touch");
+//                Touch touch2 = Input.GetTouch(1);
+//
+//                GameObject g1 = hit.collider.gameObject;
+//                GameObject g2 = null;
+//
+//                Vector2 touch2Pos = Camera.main.ScreenToWorldPoint(touch2.position);
+//                RaycastHit2D[] hits2 = Physics2D.RaycastAll(touch2Pos, (touch2.position));
+//
+//                foreach (var hit2 in hits2) {
+//                  if (hit2.collider && hit2.collider.gameObject.layer == 8) {
+//                    g2 = hit2.collider.gameObject;
+//                    Debug.Log("Ok");
+//                    break;
+//                  }
+//                }
+//
+//                if (g1 != null && g2 != null) {
+//                  Debug.Log("Swap");
+//                  Transform tmp = g1.transform.parent;
+//                  g1.transform.parent = g2.transform.parent;
+//                  g1.transform.parent.GetComponent<DraftLocker>().SetDraft(g1.GetComponent<Draft>());
+//                  g1.transform.localPosition = new Vector3(0, 0, 10);
+//                  g2.transform.parent = tmp;
+//                  g2.transform.parent.GetComponent<DraftLocker>().SetDraft(g2.GetComponent<Draft>());
+//                  g2.transform.localPosition = new Vector3(0, 0, 10);
+//                }
+//              }
               break;
             }
           }
@@ -74,39 +145,8 @@ public class Draft : MonoBehaviour
           break;
       }
     }
-//    else if (Input.touchCount == 2) {
-//      Touch touch1 = Input.GetTouch(0);
-//      Touch touch2 = Input.GetTouch(1);
-//
-//      GameObject g1 = null;
-//      GameObject g2 = null;
-//
-//      Vector2 touch1Pos = Camera.main.ScreenToWorldPoint(touch1.position);
-//      RaycastHit2D[] hits1 = Physics2D.RaycastAll(touch1Pos, (touch1.position));
-//
-//      foreach (var hit1 in hits1) {
-//        if (hit1.collider && hit1.collider.gameObject.layer == 8) {
-//          g1 = hit1.collider.gameObject;
-//          break;
-//        }
-//      }
-//
-//      Vector2 touch2Pos = Camera.main.ScreenToWorldPoint(touch2.position);
-//      RaycastHit2D[] hits2 = Physics2D.RaycastAll(touch2Pos, (touch2.position));
-//
-//      foreach (var hit2 in hits2) {
-//        if (hit2.collider && hit2.collider.gameObject.layer == 8) {
-//          g2 = hit2.collider.gameObject;
-//          break;
-//        }
-//      }
-//
-//      if (g1 != null && g2 != null) {
-//        Transform tmp = g1.transform.parent;
-//        g1.transform.parent = g2.transform.parent;
-//      }
-//    }
   }
+  */
 
   private void OnTriggerEnter2D(Collider2D collider)
   {
