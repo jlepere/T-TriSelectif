@@ -17,7 +17,7 @@ public class UnicornTrails : MonoBehaviour {
 
     if (Input.GetKeyDown(KeyCode.Space))
     {
-      SoundManage.Instance.PlayHorse();
+      SoundManager.Instance.PlayHorse();
       go = true;
     }
     if (go)

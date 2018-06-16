@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BoardManager : Singleton<BoardManager>
@@ -27,6 +28,19 @@ public class BoardManager : Singleton<BoardManager>
 
   [SerializeField]
   private List<GameObject> ecoPrefabs = new List<GameObject>();
+
+  /*[SerializeField]
+  private float timeOfTransform = 5;
+
+  [SerializeField]
+  private float transformCurrentTime = 0;
+
+  [SerializeField]
+  private float transformNormalizedValue;
+
+  private RectTransform rectTransform;
+  private Vector3 startTransform;
+  private Vector3 endTransform;*/
 
   private void OnDestroy()
   {
@@ -65,6 +79,17 @@ public class BoardManager : Singleton<BoardManager>
   {
 
   }
+
+  /*private IEnumerator LerpObject()
+  {
+    while (transformCurrentTime <= timeOfTransform)
+    {
+      transformCurrentTime =+ Time.deltaTime;
+      transformNormalizedValue = transformCurrentTime / timeOfTransform;
+      rectTransform.anchoredPosition = Vector3.Lerp(startTransform, endTransform, transformNormalizedValue);
+      yield return null;
+    }
+  }*/
 
   public void EcoBoost()
   {
