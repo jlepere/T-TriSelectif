@@ -40,7 +40,7 @@ public class SceneLoader : MonoBehaviour {
 		while (true)
 		{
 			AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Scenes/TrashScene");
-			yield return null;
+      break;
 		}
 	}
 }
