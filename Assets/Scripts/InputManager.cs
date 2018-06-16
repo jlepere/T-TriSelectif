@@ -44,7 +44,7 @@ public class InputManager : MonoBehaviour {
                   tmpDraft.transform.parent = tmp;
                   tmpDraft.transform.parent.GetComponent<DraftLocker>().SetDraft(tmpDraft.GetComponent<Draft>());
                   tmpDraft.transform.localPosition = new Vector3(0, 0, 10);
-                  animator.speed = 0.8f;
+                  animator.speed = 1f;
                 } else {
                   Transform tmp = draft.transform.parent;
                   draft.transform.parent = hit.collider.transform;
