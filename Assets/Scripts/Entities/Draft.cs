@@ -43,14 +43,14 @@ public class Draft : MonoBehaviour
     (collider.tag == "YellowTrash" && this.tag == "YellowDraft"))
     {
       SoundManager.Instance.PlayRight();
-      if (trashOnDraft.Count >= draftManager.MaxTrashOnDraft || trash == null || !trash.DraftCollide)
+      if (trash == null || !trash.DraftCollide)
         return;
       TrashManager.Instance.RemoveTrashOnScreen(collider.gameObject);
       trashOnDraft.Add(collider.gameObject);
       collider.transform.parent = this.transform;
       BoardManager.Instance.EcoScore();
     }
-    else
+    else if (collider.tag == "BrownTrash")
     {
       SoundManager.Instance.PlayWrong();
       if (trash != null)

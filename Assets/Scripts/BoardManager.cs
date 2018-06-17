@@ -105,6 +105,23 @@ public class BoardManager : Singleton<BoardManager>
       StartCoroutine(TranslateBGCoroutine(back, 1));
   }
 
+  private void OnCollisionEnter2D(Collision2D collider)
+  {
+    Trash trash = collider.gameObject.GetComponent<Trash>();
+    Debug.Log("Here");
+    if (collider.collider.tag == "BrownTrash" && trash.DraftCollide)
+    {
+      SoundManager.Instance.PlayRight();
+      TrashManager.Instance.RemoveTrashOnScreen(collider.gameObject);
+      BoardManager.Instance.EcoScore();
+    }
+    else
+    {
+      SoundManager.Instance.PlayWrong();
+      BoardManager.Instance.EcoReset();
+    }
+  }
+
   public void EcoBoost()
   {
     if (ecoPower < 100)
