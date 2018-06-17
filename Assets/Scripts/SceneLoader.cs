@@ -7,8 +7,6 @@ public class SceneLoader : MonoBehaviour {
 
 	public AudioClip click;
 
-	[SerializeField] private GameObject image;
-
 	private AudioSource source;
 	private bool transition = false;
 
@@ -28,15 +26,9 @@ public class SceneLoader : MonoBehaviour {
 	}
 
 	public void LoadNextScene () {
-		if (PlayerPrefs.GetFloat("rules", 0) != 0) 
-		{
-			transition = true;
-			source.PlayOneShot(click);
-			StartCoroutine(LoadAsyncScene());
-		} else {
-			PlayerPrefs.SetFloat("rules", 1f);
-			image.SetActive(true);
-		}
+		transition = true;
+		source.PlayOneShot(click);
+		StartCoroutine(LoadAsyncScene());
 	}
 
 	IEnumerator LoadAsyncScene ()
