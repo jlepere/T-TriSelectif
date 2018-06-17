@@ -7,11 +7,6 @@ public class InputManager : MonoBehaviour {
 
   private GameObject draft;
   private bool selected = false;
-  private Animator animator;
-
-  void Start () {
-    animator = GetComponent<Animator>();
-  }
 
   void Update () {
 
@@ -27,6 +22,7 @@ public class InputManager : MonoBehaviour {
               if (hit.collider && hit.collider.gameObject.layer == 8) {
                 draft = hit.collider.gameObject;
                 draft.transform.localScale = new Vector3(1.1f, 1.1f, 1);
+                draft.GetComponent<Animator>().speed = 1f;
                 selected = true;
                 break;
               }
@@ -44,14 +40,13 @@ public class InputManager : MonoBehaviour {
                   tmpDraft.transform.parent = tmp;
                   tmpDraft.transform.parent.GetComponent<DraftLocker>().SetDraft(tmpDraft.GetComponent<Draft>());
                   tmpDraft.transform.localPosition = new Vector3(0, 0, 10);
-                  animator.speed = 1f;
                 } else {
                   Transform tmp = draft.transform.parent;
                   draft.transform.parent = hit.collider.transform;
                   draft.transform.parent.GetComponent<DraftLocker>().SetDraft(draft.GetComponent<Draft>());
                   draft.transform.localPosition = new Vector3(0, 0, 10);
-                  animator.speed = 0.5f;
                 }
+                draft.GetComponent<Animator>().speed = 0.5f;
                 draft.transform.localScale = new Vector3(1, 1, 1);
                 draft = null;
                 selected = false;
