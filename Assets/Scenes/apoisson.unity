@@ -122,7 +122,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 74898657}
-  - component: {fileID: 74898656}
   m_Layer: 0
   m_Name: TrashSpawner_3
   m_TagString: Untagged
@@ -130,18 +129,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &74898656
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114730875408970844, guid: 24bc91c13cc7f469d907c01a36722d55,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 74898655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &74898657
 Transform:
   m_ObjectHideFlags: 0
@@ -1358,7 +1345,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 651783120}
-  - component: {fileID: 651783119}
   m_Layer: 0
   m_Name: TrashSpawner_4
   m_TagString: Untagged
@@ -1366,18 +1352,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &651783119
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114730875408970844, guid: 24bc91c13cc7f469d907c01a36722d55,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 651783118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &651783120
 Transform:
   m_ObjectHideFlags: 0
@@ -1746,7 +1720,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 963130917}
-  - component: {fileID: 963130916}
   m_Layer: 0
   m_Name: TrashSpawner_2
   m_TagString: Untagged
@@ -1754,18 +1727,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &963130916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114730875408970844, guid: 24bc91c13cc7f469d907c01a36722d55,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 963130915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &963130917
 Transform:
   m_ObjectHideFlags: 0
@@ -2576,7 +2537,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1377754557}
-  - component: {fileID: 1377754556}
   m_Layer: 0
   m_Name: TrashSpawner_1
   m_TagString: Untagged
@@ -2584,18 +2544,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1377754556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114730875408970844, guid: 24bc91c13cc7f469d907c01a36722d55,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1377754555}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1377754557
 Transform:
   m_ObjectHideFlags: 0
