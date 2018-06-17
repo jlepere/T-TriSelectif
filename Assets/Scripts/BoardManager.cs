@@ -34,6 +34,8 @@ public class BoardManager : Singleton<BoardManager>
   [SerializeField] private Text timeText;
   [SerializeField] private Slider slider;
 
+  public Button power;
+
   private float timer = 0;
 
   void Start () {
@@ -79,6 +81,8 @@ public class BoardManager : Singleton<BoardManager>
     scoreChain++;
     if (scoreChain > 1)
       EcoBoost();
+    if (scoreChain == 5)
+      power.interactable = true;
     gameScore += ecoBonus * scoreBonus;
     scoreText.text = "Score\n" + gameScore.ToString();
 
