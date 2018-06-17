@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BoardManager : Singleton<BoardManager>
 {
@@ -29,6 +30,16 @@ public class BoardManager : Singleton<BoardManager>
   [SerializeField]
   private List<GameObject> ecoPrefabs = new List<GameObject>();
 
+  [SerializeField] private Text scoreText;
+  [SerializeField] private Text timeText;
+  [SerializeField] private Slider slider;
+
+  private float timer = 0;
+
+  void Start () {
+    scoreText.text = "Score\n0";
+  }
+  
   private void OnDestroy()
   {
     foreach (GameObject prefab in ecoPrefabs)
@@ -37,6 +48,12 @@ public class BoardManager : Singleton<BoardManager>
   }
 
   void Update () {
+    timer += Time.deltaTime;
+    string minutes = Mathf.Floor(timer / 60).ToString("00");
+    string seconds = (timer % 60).ToString("00");
+
+    slider.value = ecoPower;
+    timeText.text = minutes + ":" + seconds;
 
     if (ecoPower <= 0)
       StartCoroutine(EndGame());
@@ -63,6 +80,7 @@ public class BoardManager : Singleton<BoardManager>
     if (scoreChain > 1)
       EcoBoost();
     gameScore += ecoBonus * scoreBonus;
+    scoreText.text = "Score\n" + gameScore.ToString();
 
     Debug.Log("ScoreBonus " +  scoreBonus);
     Debug.Log("GameScore " + ecoPower);
@@ -100,8 +118,17 @@ public class BoardManager : Singleton<BoardManager>
       FadeBackground(ecoPrefabs[2], ecoPrefabs[3]);
   }
 
+  public void EcoBurst()
+  {
+    if (ecoPower > 0)
+      ecoPower -= ecoMalus;
+    else
+      ecoPower = 0;
+  }
+
   public void EcoReset()
   {
+    EcoBurst();
     scoreChain = 0;
     ecoPower -= ecoMalus;
 
