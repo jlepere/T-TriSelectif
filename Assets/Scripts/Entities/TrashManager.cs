@@ -15,6 +15,8 @@ public class TrashManager : Singleton<TrashManager>
   [SerializeField]
   private List<GameObject> trashOnScreen = new List<GameObject>();
 
+  private bool active = true;
+
   private bool isActive = true;
 
   private void Start()
@@ -34,7 +36,8 @@ public class TrashManager : Singleton<TrashManager>
     collider.tag == "YellowTrash" || collider.tag == "BrownTrash" ||
     collider.tag == "TrickyTrash")
     {
-      ActivateSpawner();
+      if (active)
+        ActivateSpawner();
     }
   }
 
@@ -68,5 +71,9 @@ public class TrashManager : Singleton<TrashManager>
       trashOnScreen.Remove(trash);
       trash.SetActive(false);
     }
+  }
+
+  public void StopSpawn () {
+    active = false;
   }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BoardManager : Singleton<BoardManager>
@@ -11,7 +12,7 @@ public class BoardManager : Singleton<BoardManager>
   private int ecoBonus = 5;
 
   [SerializeField]
-  private int ecoMalus = 10;
+  private int ecoMalus = 5;
 
   [SerializeField]
   private int gameScore = 0;
@@ -35,6 +36,22 @@ public class BoardManager : Singleton<BoardManager>
     ecoPrefabs.Clear();
   }
 
+  void Update () {
+
+    if (ecoPower <= 0)
+      StartCoroutine(EndGame());
+
+    if (ecoPower < 100 && ecoPower >= 80)
+      TranslateBackground(ecoPrefabs[5]);
+    else if (ecoPower < 80 && ecoPower >= 60)
+      TranslateBackground(ecoPrefabs[4]);
+
+    else if (ecoPower < 40 && ecoPower >= 20)
+      TranslateBackground(ecoPrefabs[1]);
+    else if (ecoPower < 20 && ecoPower >= 0)
+      TranslateBackground(ecoPrefabs[0]);
+  }
+
   public int EcoPower
   {
     get { return ecoPower; }
@@ -47,23 +64,23 @@ public class BoardManager : Singleton<BoardManager>
       EcoBoost();
     gameScore += ecoBonus * scoreBonus;
 
-    if (gameScore >= 40 && gameScore < 50)
-      FadeBackground(ecoPrefabs[3], ecoPrefabs[2]);
-    else if (gameScore >= 50 && gameScore < 60)
-      FadeBackground(ecoPrefabs[2], ecoPrefabs[3]);
-
     Debug.Log("ScoreBonus " +  scoreBonus);
-    Debug.Log("GameScore " + gameScore);
+    Debug.Log("GameScore " + ecoPower);
   }
 
   private void FadeBackground(GameObject toHide, GameObject toShow)
   {
-
+    toHide.SetActive(false);
+    toShow.SetActive(true);
   }
 
-  private void TranslateBackground(GameObject back)
-  {
-
+  private void TranslateBackground(GameObject back) {
+    back.SetActive(true);
+    StopAllCoroutines();
+    if (back.GetComponent<RectTransform>().offsetMin.y >= 0)
+      StartCoroutine(TranslateBGCoroutine(back, -1));
+    else
+      StartCoroutine(TranslateBGCoroutine(back, 1));
   }
 
   public void EcoBoost()
@@ -76,10 +93,43 @@ public class BoardManager : Singleton<BoardManager>
       scoreBonus++;
     else
       scoreBonus = maxScoreBonus;
+
+    if (ecoPower >= 40 && ecoPower < 50)
+      FadeBackground(ecoPrefabs[3], ecoPrefabs[2]);
+    else if (ecoPower >= 50 && ecoPower < 60)
+      FadeBackground(ecoPrefabs[2], ecoPrefabs[3]);
   }
 
   public void EcoReset()
   {
     scoreChain = 0;
+    ecoPower -= ecoMalus;
+
+    if (ecoPower >= 40 && ecoPower < 50)
+      FadeBackground(ecoPrefabs[3], ecoPrefabs[2]);
+    else if (ecoPower >= 50 && ecoPower < 60)
+      FadeBackground(ecoPrefabs[2], ecoPrefabs[3]);
+  }
+
+  IEnumerator TranslateBGCoroutine (GameObject bg, int dir) {
+    if (dir > 0) {
+      while (bg.GetComponent<RectTransform>().offsetMin.y < 0) {
+        bg.transform.Translate(0, Time.deltaTime, 0);
+        yield return new WaitForSeconds(0.1f);
+      }
+    } else {
+      while (bg.GetComponent<RectTransform>().offsetMin.y > -250) {
+        bg.transform.Translate(0, Time.deltaTime * dir, 0);
+        yield return new WaitForSeconds(0.1f);
+      }
+    }
+    yield return null;
+  }
+
+  IEnumerator EndGame () {
+    TrashManager.instance.StopSpawn();
+    yield return new WaitForSeconds(2);
+    Debug.Log("GameOver");
+    Time.timeScale = 0;
   }
 }
