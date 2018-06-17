@@ -1203,6 +1203,7 @@ MonoBehaviour:
   scoreText: {fileID: 1119238085}
   timeText: {fileID: 1222452845}
   slider: {fileID: 23178773}
+  power: {fileID: 0}
 --- !u!4 &539314315
 Transform:
   m_ObjectHideFlags: 0
@@ -1593,7 +1594,7 @@ GameObject:
   - component: {fileID: 819985107}
   - component: {fileID: 819985106}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: EndGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
