@@ -9,7 +9,6 @@ public class TrashCan : MonoBehaviour {
   public bool directionChosen = false;
 
   void Update() {
-//    transform.Translate(Input.acceleration.x, 0, -Input.acceleration.z);
     if (Input.touchCount > 0) {
       Touch touch = Input.GetTouch(0);
 
