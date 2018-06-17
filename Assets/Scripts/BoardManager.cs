@@ -93,8 +93,26 @@ public class BoardManager : Singleton<BoardManager>
 
   private void FadeBackground(GameObject toHide, GameObject toShow)
   {
-    toHide.SetActive(false);
     toShow.SetActive(true);
+    toHide.SetActive(false);
+//    StopAllCoroutines();
+//    StartCoroutine(FadeBGCoroutine(toHide, toShow));
+  }
+
+  IEnumerator FadeBGCoroutine (GameObject toHide, GameObject toShow) {
+    toShow.SetActive(true);
+    float r = toShow.GetComponent<Image>().color.r;
+    float g = toShow.GetComponent<Image>().color.g;
+    float b = toShow.GetComponent<Image>().color.b;
+    float a = toShow.GetComponent<Image>().color.a;
+    toShow.GetComponent<Image>().color = new Color(r,g,b,0);
+    while (a < 1) {
+      a += 0.2f;
+      toShow.GetComponent<Image>().color = new Color(r,g,b,a);
+      yield return new WaitForSeconds(0.1f);
+    }
+//    toHide.SetActive(false);
+    yield return null;
   }
 
   private void TranslateBackground(GameObject back) {
@@ -169,9 +187,9 @@ public class BoardManager : Singleton<BoardManager>
   }
 
   IEnumerator EndGame () {
-    endGame.SetActive(true);
     TrashManager.instance.StopSpawn();
-    yield return new WaitForSeconds(2);
+    yield return new WaitForSeconds(1);
+    endGame.SetActive(true);
     Debug.Log("GameOver");
     Time.timeScale = 0;
   }
