@@ -108,7 +108,6 @@ public class BoardManager : Singleton<BoardManager>
   private void OnCollisionEnter2D(Collision2D collider)
   {
     Trash trash = collider.gameObject.GetComponent<Trash>();
-    Debug.Log("Here");
     if (collider.collider.tag == "BrownTrash" && trash.DraftCollide)
     {
       SoundManager.Instance.PlayRight();
@@ -117,8 +116,11 @@ public class BoardManager : Singleton<BoardManager>
     }
     else
     {
+      if (trash.HurtMe)
+        return;
       SoundManager.Instance.PlayWrong();
       BoardManager.Instance.EcoReset();
+      trash.HurtMe = true;
     }
   }
 

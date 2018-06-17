@@ -52,10 +52,13 @@ public class Draft : MonoBehaviour
     }
     else if (collider.tag == "BrownTrash")
     {
+      if (trash.HurtMe)
+        return;
       SoundManager.Instance.PlayWrong();
       if (trash != null)
         trash.DraftCollide = false;
       BoardManager.Instance.EcoReset();
+      trash.HurtMe = true;
     }
   }
 }
