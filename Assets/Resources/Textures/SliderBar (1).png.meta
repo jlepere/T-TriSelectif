@@ -1,4 +1,14 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: 8e2c06613180c9847a18503e6cf054c7
+TextureImporter:
+  fileIDToRecycleName: {}
+  externalObjects: {}
+  serializedVersion: 5
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+=======
 guid: d3d14b4b80452df4a956a8f2dde3fe2d
 timeCreated: 1529215415
 licenseType: Free
@@ -8,10 +18,16 @@ TextureImporter:
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
+>>>>>>> 4da02d91210bcc23b4d01e85f2512e27d4562b60
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
     borderMipMap: 0
+<<<<<<< HEAD
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+=======
+>>>>>>> 4da02d91210bcc23b4d01e85f2512e27d4562b60
     mipMapFadeDistanceStart: 1
     mipMapFadeDistanceEnd: 3
   bumpmap:
@@ -27,10 +43,20 @@ TextureImporter:
   textureFormat: 1
   maxTextureSize: 2048
   textureSettings:
+<<<<<<< HEAD
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+=======
     filterMode: -1
     aniso: -1
     mipBias: -1
     wrapMode: -1
+>>>>>>> 4da02d91210bcc23b4d01e85f2512e27d4562b60
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -39,6 +65,17 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
+<<<<<<< HEAD
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+=======
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaUsage: 1
@@ -46,22 +83,44 @@ TextureImporter:
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+>>>>>>> 4da02d91210bcc23b4d01e85f2512e27d4562b60
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
+<<<<<<< HEAD
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+=======
   - buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
+>>>>>>> 4da02d91210bcc23b4d01e85f2512e27d4562b60
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+<<<<<<< HEAD
+    androidETC2FallbackOverride: 0
+=======
+>>>>>>> 4da02d91210bcc23b4d01e85f2512e27d4562b60
   spriteSheet:
     serializedVersion: 2
     sprites: []
     outline: []
+<<<<<<< HEAD
+    physicsShape: []
+    bones: []
+    spriteID: 2dcbdc2bbc7241e4cbe13bf0a7a4b931
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+=======
+>>>>>>> 4da02d91210bcc23b4d01e85f2512e27d4562b60
   spritePackingTag: 
   userData: 
   assetBundleName: 

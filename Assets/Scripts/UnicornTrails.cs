@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UnicornTrails : MonoBehaviour {
 
+  public Button power;
   private Vector3 initialPos;
   private bool go = false;
 
@@ -30,5 +32,6 @@ public class UnicornTrails : MonoBehaviour {
 
   public void Activate () {
     go = true;
+    power.interactable = false;
   }
 }
