@@ -30,6 +30,15 @@ public class UnicornTrails : MonoBehaviour {
     }
   }
 
+  private void OnTriggerEnter2D(Collider2D collider)
+  {
+    if (collider.tag == "BlueTrash" || collider.tag == "GreenTrash" ||
+    collider.tag == "YellowTrash" || collider.tag == "BrownTrash")
+    {
+      Destroy(collider.gameObject);
+    }
+  }
+
   public void Activate () {
     go = true;
     power.interactable = false;
