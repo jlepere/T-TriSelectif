@@ -61,3 +61,6 @@ TagManager:
   - name: Unicorn
     uniqueID: 3650375683
     locked: 0
+  - name: GUI
+    uniqueID: 3480214539
+    locked: 0
