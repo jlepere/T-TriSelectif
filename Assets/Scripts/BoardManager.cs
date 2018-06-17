@@ -33,13 +33,14 @@ public class BoardManager : Singleton<BoardManager>
   [SerializeField] private Text scoreText;
   [SerializeField] private Text timeText;
   [SerializeField] private Slider slider;
+  [SerializeField] private GameObject endGame;
 
   public Button power;
 
   private float timer = 0;
 
   void Start () {
-    scoreText.text = "Score\n0";
+    scoreText.text = "0";
   }
 
   private void OnDestroy()
@@ -84,7 +85,7 @@ public class BoardManager : Singleton<BoardManager>
     if (scoreChain == 5)
       power.interactable = true;
     gameScore += ecoBonus * scoreBonus;
-    scoreText.text = "Score\n" + gameScore.ToString();
+    scoreText.text = gameScore.ToString();
 
     Debug.Log("ScoreBonus " +  scoreBonus);
     Debug.Log("GameScore " + ecoPower);
@@ -168,6 +169,7 @@ public class BoardManager : Singleton<BoardManager>
   }
 
   IEnumerator EndGame () {
+    endGame.SetActive(true);
     TrashManager.instance.StopSpawn();
     yield return new WaitForSeconds(2);
     Debug.Log("GameOver");
