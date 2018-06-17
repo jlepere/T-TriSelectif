@@ -6,19 +6,20 @@ public class MenuManager : MonoBehaviour {
 
 	[SerializeField] private GameObject rules;
 
-	private bool startGame = false;
+	private bool startGame = true;
 
 	void Start () {
 		if (PlayerPrefs.GetFloat("rules") == 0)
 		{
 			rules.SetActive(true);
+		  startGame = false;
 		}
 	}
 
 	void Update () {
 		if (startGame)
 			Time.timeScale = 1;
-		else 
+		else
 			Time.timeScale = 0;
 	}
 
