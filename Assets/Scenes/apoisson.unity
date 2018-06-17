@@ -506,7 +506,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -515,9 +515,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: 6a24401d7c041bb4d85e82b66e24ab68,
+      type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 6a24401d7c041bb4d85e82b66e24ab68, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 6a24401d7c041bb4d85e82b66e24ab68, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -527,7 +528,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 245563059}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1346025366}
+        m_MethodName: LeaveGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &245563059
@@ -947,7 +959,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &381840697
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1622,10 +1634,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 66863002971a23f40bd4f75cd4069d04,
+    m_HighlightedSprite: {fileID: 21300000, guid: 7f89e7e0122e7f64dbcc4e6f2ce256c1,
       type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: 66863002971a23f40bd4f75cd4069d04, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: 917a75681fcf31e4f9e597bec9257768, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 7f89e7e0122e7f64dbcc4e6f2ce256c1, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 7f89e7e0122e7f64dbcc4e6f2ce256c1, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -1637,7 +1649,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1346025366}
-        m_MethodName: QuitRules
+        m_MethodName: RestartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
