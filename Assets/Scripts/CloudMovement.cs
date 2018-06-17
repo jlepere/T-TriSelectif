@@ -4,23 +4,20 @@ using UnityEngine;
 
 public class CloudMovement : MonoBehaviour {
 
-  private float initialX;
-  private float currentX;
   private float randomFactor;
 
   void Awake () {
-    initialX = transform.position.x;
-    randomFactor = Random.Range(0.1f, 0.5f);
+    randomFactor = Random.Range(0.02f, 0.04f);
   }
 
   void Update() {
     float accel = Input.acceleration.x * randomFactor;
-    currentX = transform.position.x;
-    if (currentX + accel < initialX + 0.5f && accel > 0) {
-      transform.Translate(accel, 0, 0);
+    transform.Translate(accel, 0, 0);
+    if (transform.position.x < -7.5f) {
+      transform.position = new Vector3(7.5f, transform.position.y, transform.position.z);
     }
-    if (currentX - accel > initialX - 0.5f && accel < 0) {
-      transform.Translate(accel, 0, 0);
+    if (transform.position.x > 7.5f) {
+      transform.position = new Vector3(-7.5f, transform.position.y, transform.position.z);
     }
   }
 
